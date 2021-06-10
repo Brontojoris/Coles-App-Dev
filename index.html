@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Static Template</title>
+    <style>
+      * {
+        font-family: sans-serif;
+        color: #444;
+      }
+      code {
+        font-family: Consolas;
+        color: #888;
+        display: block;
+        margin-bottom: 1em;
+      }
+      input[type="text"] {
+        border: gainsboro;
+        padding: 3px;
+      }
+      header {
+        width: 100%;
+        background-color: #df1f27;
+        padding: 10px 10px 1px 10px;
+        margin: -10px 0px 10px -10px;
+      }
+      h1 {
+        color: #fff;
+      }
+      h3 {
+        border-top: 1px solid #eee;
+        padding-top: 0.3em;
+        margin-top: 1em;
+      }
+      a:link {
+        color: cornflowerblue;
+      }
+    </style>
+    <script
+      src="//assets.adobedtm.com/be8983348498/e14791c1cf08/launch-780d9d347e3c-development.min.js"
+      async
+    ></script>
+  </head>
+  <body>
+    <header>
+      <h1>
+        Coles Webview Test
+      </h1>
+    </header>
+    <a href="https://04xnm.csb.app/">Home</a>
+    <h3>User Agent</h3>
+    <code id="useragent"></code>
+    <h3>Query String</h3>
+    <code id="querystring"></code>
+    <h3>Cookies</h3>
+    <code id="cookies"></code>
+    <h3>Session Storage</h3>
+    <code id="sessionstorage"></code>
+    <h3>Local Storage</h3>
+    <code id="localstorage"></code>
+    <script>
+      document.querySelector("#useragent").innerText = navigator.userAgent;
+      document.querySelector("#querystring").innerText =
+        location.search || "empty";
+      document.querySelector("#cookies").innerText = document.cookie || "empty";
+      document.querySelector("#sessionstorage").innerText = JSON.stringify(
+        sessionstorage,
+        null,
+        2
+      );
+      document.querySelector("#localstorage").innerText = JSON.stringify(
+        localStorage,
+        null,
+        2
+      );
+    </script>
+  </body>
+</html>
